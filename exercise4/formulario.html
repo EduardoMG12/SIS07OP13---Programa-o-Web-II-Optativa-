@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4 - Formulario com Tabela</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fb;
+            color: #1f2937;
+            padding: 32px 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 1px solid #d1d5db;
+            padding: 14px;
+        }
+
+        td:first-child {
+            width: 30%;
+            font-weight: bold;
+            background: #f9fafb;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pratica em Sala - Array Numerico</h1>
+        <p>Informe cinco numeros diferentes para montar um array numerico e exibir os valores na ordem em que foram digitados.</p>
+
+        <form action="processar.php" method="POST">
+            <table>
+                <tr>
+                    <td><label for="numero1">Numero 1</label></td>
+                    <td><input type="number" id="numero1" name="numero1" step="any" required></td>
+                </tr>
+                <tr>
+                    <td><label for="numero2">Numero 2</label></td>
+                    <td><input type="number" id="numero2" name="numero2" step="any" required></td>
+                </tr>
+                <tr>
+                    <td><label for="numero3">Numero 3</label></td>
+                    <td><input type="number" id="numero3" name="numero3" step="any" required></td>
+                </tr>
+                <tr>
+                    <td><label for="numero4">Numero 4</label></td>
+                    <td><input type="number" id="numero4" name="numero4" step="any" required></td>
+                </tr>
+                <tr>
+                    <td><label for="numero5">Numero 5</label></td>
+                    <td><input type="number" id="numero5" name="numero5" step="any" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Montar Array</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
