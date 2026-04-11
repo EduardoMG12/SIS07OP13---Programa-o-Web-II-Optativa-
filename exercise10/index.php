@@ -1,11 +1,9 @@
 <?php
 require_once 'conexao.php';
 
-// Recuperacao dos dados - Livros
 $sqlLivros = "SELECT * FROM livros";
 $resultadoLivros = $conexao->query($sqlLivros);
 
-// Recuperacao dos dados - Pessoa
 $sqlPessoa = "SELECT * FROM pessoa";
 $resultadoPessoa = $conexao->query($sqlPessoa);
 ?>
@@ -15,13 +13,13 @@ $resultadoPessoa = $conexao->query($sqlPessoa);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 10 - Consulta ao Banco de Dados</title>
+    <title>Consulta ao Banco de Dados</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Exercicio 10 - Consulta ao Banco de Dados</h1>
+        <h1>Consulta ao Banco de Dados</h1>
         <p>Recuperacao de dados do banco <strong>sisbiblioteca</strong> usando MySQLi orientado a objetos.</p>
 
         <section class="bloco">

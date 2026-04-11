@@ -1,0 +1,46 @@
+services:
+  php:
+    image: php:8.3-apache
+    container_name: php-web
+    ports:
+      - "8082:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+    command: >
+      bash -c "docker-php-ext-install mysqli && apache2-foreground"
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./exercise8/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./exercise9/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: ""
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql_data:

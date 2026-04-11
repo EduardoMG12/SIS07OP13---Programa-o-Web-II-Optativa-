@@ -1,10 +1,5 @@
 <?php
-// =============================================
-// Exercicio 10 - Conexao com o Banco de Dados
-// AULA 05 - PHPMyAdmin e Conexao PHP com MySQL
-// =============================================
-
-$host   = 'localhost';
+$host   = 'mysql';
 $user   = 'root';
 $senha  = '';
 $db     = 'sisbiblioteca';
